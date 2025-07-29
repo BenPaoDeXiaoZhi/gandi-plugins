@@ -9,12 +9,15 @@ const ExtensionTypeDefinition = ({ vm, registerSettings, msg }) => {
         console.warn('ide未在全局暴露monaco或其js语言功能,无法加载插件' + msg("plugins.extensionTypeDefinition.title"))
         return { dispose: () => { } }
     }
-    if(window.DEBUG_CREATE_JS_SUPPORT) vm.runtime.gandi._supportedAssetTypes.push({ //测试用
-        "contentType": "text/javascript",
-        "name": "Extension",
-        "runtimeFormat": "js",
-        "immutable": true
-    })
+
+    // vm.runtime.gandi._supportedAssetTypes.push({ //测试用
+    //     "contentType": "text/javascript",
+    //     "name": "Extension",
+    //     "runtimeFormat": "js",
+    //     "immutable": true
+    // })
+    // console.log('已注册拓展支持')
+
     const register = registerSettings(
         msg("plugins.extensionTypeDefinition.title"),
         "plugin-extension-type-definition",
